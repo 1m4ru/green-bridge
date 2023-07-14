@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Card, Stack, CardProps, CardHeader, Typography } from '@mui/material';
+import { Card, Stack, CardProps, CardHeader, Typography, Button } from '@mui/material';
 
 interface Props extends CardProps {
   title?: string;
@@ -15,9 +15,6 @@ export default function BookingCustomerReviews({ title, subheader, description, 
   // Estado para armazenar a descrição editável
   const [editableDescription, setEditableDescription] = useState<string>(description || '');
 
-  const handleDescriptionChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setEditableDescription(event.target.value);
-  };
 
   return (
     <Card {...other}>
@@ -31,7 +28,7 @@ export default function BookingCustomerReviews({ title, subheader, description, 
 
       <Stack
         spacing={2}
-        direction="row"
+        direction="column"
         alignItems="flex-end"
         sx={{
           p: theme.spacing(0, 3, 3, 3),
@@ -40,6 +37,12 @@ export default function BookingCustomerReviews({ title, subheader, description, 
         <Typography>
           {editableDescription}
         </Typography>
+        <Button variant="contained" sx={{
+          background: "green",
+          "&:hover": {
+            background: "darkgreen"
+          }
+        }}>Saiba Mais</Button>
       </Stack>
     </Card>
   );

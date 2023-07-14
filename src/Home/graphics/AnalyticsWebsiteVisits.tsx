@@ -3,8 +3,10 @@ import { ApexOptions } from 'apexcharts';
 import { Card, CardHeader, Box, CardProps } from '@mui/material';
 import Chart, { useChart } from '../../components/Charts';
 // components
-import {format} from 'date-fns';
+import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+
+
 
 // ----------------------------------------------------------------------
 
@@ -26,14 +28,21 @@ interface Props extends CardProps {
 
 
 
+
+
+export interface PopOverProps {
+  title?: string;
+  descriptionPopOver?: string[];
+}
+
 export default function AnalyticsWebsiteVisits({ title, subheader, chart, ...other }: Props) {
   const { labels, colors, series, options } = chart;
 
- const formattedLabels = labels && labels.map((labelItem) => {
-  const date = new Date(labelItem)
-  return format(date, 'dd/MM/yyyy', {locale: ptBR})
-  
- })
+  const formattedLabels = labels && labels.map((labelItem) => {
+    const date = new Date(labelItem)
+    return format(date, 'dd/MM/yyyy', { locale: ptBR })
+
+  })
 
   const chartOptions = useChart({
     colors,
@@ -65,15 +74,14 @@ export default function AnalyticsWebsiteVisits({ title, subheader, chart, ...oth
     // locales: [ptBR]
   });
 
-  
-    return (
-      <Card {...other}>
-        <CardHeader title={title} subheader={subheader} />
-  
-        <Box sx={{ p: 3, pb: 1 }} dir="ltr">
-          <Chart options={chartOptions} series={series} type="line" height={364} />
-        </Box>
-      </Card>
-    );
-  }
+
+  return (
+    <Card {...other}>
+      <CardHeader title={title} subheader={subheader} />
+      <Box sx={{ p: 3, pb: 1 }} dir="ltr">
+        <Chart options={chartOptions} series={series} type="line" height={364} />
+      </Box>
+    </Card>
+  );
+}
 

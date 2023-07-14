@@ -23,13 +23,8 @@ export default function Header({ onOpenNav }: Props) {
   const renderContent = (
     <>
       {isDesktop && isNavHorizontal && 
-      <img  src="/src/img/logo.png"  style={{marginRight: 10}}/>}
+      <img  src="../../src/img/logo.png"  style={{marginRight: 10}}/>}
 
-      {!isDesktop && (
-        <IconButton onClick={onOpenNav} sx={{ mr: 1, color: 'text.primary' }}>
-          <Iconify icon="eva:menu-2-fill" />
-        </IconButton>
-      )}
 
       <Stack
         flexGrow={1}
@@ -43,8 +38,11 @@ export default function Header({ onOpenNav }: Props) {
         sx={{
           color: "green",
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        
           
-          marginLeft: "32%",
+          marginLeft: "45%",
           }}>Green Bridge</Typography>
       </Stack>
     </>
@@ -63,8 +61,6 @@ export default function Header({ onOpenNav }: Props) {
           duration: theme.transitions.duration.shorter,
         }),
         ...(isDesktop && {
-          width: `calc(100% - 280px)`,
-          height: 92,
           ...(isOffset && {
             height: 60,
           }),
@@ -87,6 +83,7 @@ export default function Header({ onOpenNav }: Props) {
         }}
       >
         {renderContent}
+        {isDesktop && isNavHorizontal && <Logo sx={{ marginRight: 10 }} />}
       </Toolbar>
     </AppBar>
   );

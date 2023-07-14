@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Popover, Typography } from '@mui/material';
 import Header from './header/Header';
 import AnalyticsWebsiteVisits from './graphics/AnalyticsWebsiteVisits';
 import GeneralBookingPage from './notices/notices';
+import EcommerceNewProducts from './commerce/product';
 
 const Home: React.FC = () => {
   return (
@@ -15,14 +16,14 @@ const Home: React.FC = () => {
         <Grid item xs={6} md={3} lg={3}>
           {/* Card 1 */}
           <AnalyticsWebsiteVisits
-            title="Empresa 1"
-            subheader="Últimos 12 meses"
+            title="Digitro"
+            subheader="Últimos 4 meses"
             chart={{
               labels: [
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
+                '01/01/2022',
+                '01/02/2022',
+                '03/03/2022',
+                '04/04/2022',
                 
               ],
               series: [
@@ -30,30 +31,31 @@ const Home: React.FC = () => {
                   name: 'Funcionários na empresa',
                   type: 'area',
                   fill: 'gradient',
-                  data: [44, 55, 41, 67],
+                  data: [500, 650, 660, 672],
                 },
                 {
                   name: 'Consumo de Água',
                   type: 'line',
                   fill: 'solid',
-                  data: [30, 25, 36, 30],
+                  data: [300, 360, 340, 380],
                 },
               ],
             }}
           />
+ 
         </Grid>
 
         <Grid item xs={6} md={3} lg={3}>
           {/* Card 2 */}
           <AnalyticsWebsiteVisits
-            title="Empresa 2"
-            subheader="Últimos 12 meses"
+            title="Grupo Almeida"
+            subheader="Últimos 4 meses"
             chart={{
               labels: [
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
+                '01/01/2022',
+                '02/02/2022',
+                '03/03/2022',
+                '04/04/2022',
             
               ],
               series: [
@@ -61,13 +63,45 @@ const Home: React.FC = () => {
                   name: 'Funcionários na empresa',
                   type: 'area',
                   fill: 'gradient',
-                  data: [44, 55, 41, 67],
+                  data: [550, 550,500, 513],
                 },
                 {
                   name: 'Consumo de Água',
                   type: 'line',
                   fill: 'solid',
-                  data: [30, 25, 36, 30],
+                  data: [100, 100, 79, 84],
+                },
+              ],
+            }}
+          />
+          
+        </Grid>
+
+        <Grid item xs={6} md={3} lg={3}>
+          {/* Card 2 */}
+          <AnalyticsWebsiteVisits
+            title="Recicash"
+            subheader="Últimos 4 meses"
+            chart={{
+              labels: [
+                '01/01/2022',
+                '02/02/2022',
+                '03/03/2022',
+                '04/04/2022',
+           
+              ],
+              series: [
+                {
+                  name: 'Funcionários na empresa',
+                  type: 'area',
+                  fill: 'gradient',
+                  data: [40, 40, 40, 40],
+                },
+                {
+                  name: 'Consumo de Água',
+                  type: 'line',
+                  fill: 'solid',
+                  data: [100, 90, 88, 77],
                 },
               ],
             }}
@@ -77,14 +111,14 @@ const Home: React.FC = () => {
         <Grid item xs={6} md={3} lg={3}>
           {/* Card 2 */}
           <AnalyticsWebsiteVisits
-            title="Empresa 2"
-            subheader="Últimos 12 meses"
+            title="Grupo Nexxera"
+            subheader="Últimos 4 meses"
             chart={{
               labels: [
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
+                '01/01/2022',
+                '01/02/2022',
+                '01/03/2022',
+                '01/04/2022',
            
               ],
               series: [
@@ -92,48 +126,24 @@ const Home: React.FC = () => {
                   name: 'Funcionários na empresa',
                   type: 'area',
                   fill: 'gradient',
-                  data: [44, 55, 41, 67],
+                  data: [4000, 4000, 4100, 4150],
                 },
                 {
                   name: 'Consumo de Água',
                   type: 'line',
                   fill: 'solid',
-                  data: [30, 25, 36, 30],
+                  data: [1000, 900, 1100, 1150],
                 },
               ],
             }}
           />
         </Grid>
-
-        <Grid item xs={6} md={3} lg={3}>
-          {/* Card 2 */}
-          <AnalyticsWebsiteVisits
-            title="Empresa 2"
-            subheader="Últimos 12 meses"
-            chart={{
-              labels: [
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
-           
-              ],
-              series: [
-                {
-                  name: 'Funcionários na empresa',
-                  type: 'area',
-                  fill: 'gradient',
-                  data: [44, 55, 41, 67],
-                },
-                {
-                  name: 'Consumo de Água',
-                  type: 'line',
-                  fill: 'solid',
-                  data: [30, 25, 36, 30],
-                },
-              ],
-            }}
-          />
+      </Grid>
+    </Container>
+    <Container sx={{ marginTop: "15%" }} >
+      <Grid container >
+        <Grid item xs={12}>
+          <EcommerceNewProducts />
         </Grid>
       </Grid>
     </Container>
